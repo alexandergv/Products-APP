@@ -1,0 +1,24 @@
+<div   *ngFor ="let product of products" class="card card-body mb-2" >
+    <div class="row">
+        <div class="col-md-8">
+            <ul>
+                <li>
+                    ID: {{product._id}}
+                </li>
+                <li>
+                    Name: {{product.name}}
+                </li>
+                <li>
+                    Description: {{product.description}}
+                </li>
+                <li>
+                    Price: {{product.price}} US$
+                </li>
+            </ul>
+            <button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button>
+            <button class="btn btn-primary" [routerLink]="['/product/edit']" 
+            [queryParams]="{productID: product._id}">Edit</button>
+        </div>
+      
+    </div> 
+</div>
